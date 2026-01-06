@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineGeet - Seat Selection</title>
+  <link rel="stylesheet" href="Seat-Selection.css">
+    <a href="payment.html">Payment Page</a>
+</head>
+<body>
+  <h1>Select Your Seats</h1>
+  <div class="screen"></div>
+
+  <!-- Price Categories -->
+  <div class="price-section">
+    <span>Platinum 💎 - ₹300</span>
+    <span>Gold 🪙 - ₹200</span>
+    <span>Silver 🎟 - ₹150</span>
+  </div>
+
+  <!-- Seat Rows -->
+  <div id="seat-map">
+    <h3>Platinum</h3>
+    <div class="row">
+      <div class="seat" data-seat="A1"></div>
+      <div class="seat" data-seat="A2"></div>
+      <div class="seat occupied" data-seat="A3"></div>
+      <div class="seat" data-seat="A4"></div>
+      <div class="seat" data-seat="A5"></div>
+      <div class="seat" data-seat="A6"></div>
+    </div>
+    <div class="row">
+      <div class="seat" data-seat="B1"></div>
+      <div class="seat" data-seat="B2"></div>
+      <div class="seat" data-seat="B3"></div>
+      <div class="seat occupied" data-seat="B4"></div>
+      <div class="seat" data-seat="B5"></div>
+      <div class="seat" data-seat="B6"></div>
+    </div>
+
+    <h3>Gold</h3>
+    <div class="row">
+      <div class="seat" data-seat="C1"></div>
+      <div class="seat" data-seat="C2"></div>
+      <div class="seat" data-seat="C3"></div>
+      <div class="seat" data-seat="C4"></div>
+      <div class="seat" data-seat="C5"></div>
+      <div class="seat" data-seat="C6"></div>
+    </div>
+    <div class="row">
+      <div class="seat occupied" data-seat="D1"></div>
+      <div class="seat" data-seat="D2"></div>
+      <div class="seat" data-seat="D3"></div>
+      <div class="seat" data-seat="D4"></div>
+      <div class="seat" data-seat="D5"></div>
+      <div class="seat" data-seat="D6"></div>
+    </div>
+
+    <h3>Silver</h3>
+    <div class="row">
+      <div class="seat" data-seat="E1"></div>
+      <div class="seat" data-seat="E2"></div>
+      <div class="seat occupied" data-seat="E3"></div>
+      <div class="seat" data-seat="E4"></div>
+      <div class="seat" data-seat="E5"></div>
+      <div class="seat" data-seat="E6"></div>
+    </div>
+    <div class="row">
+      <div class="seat" data-seat="F1"></div>
+      <div class="seat" data-seat="F2"></div>
+      <div class="seat" data-seat="F3"></div>
+      <div class="seat" data-seat="F4"></div>
+      <div class="seat" data-seat="F5"></div>
+      <div class="seat" data-seat="F6"></div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div><div class="seat"></div> Available</div>
+    <div><div class="seat selected"></div> Selected</div>
+    <div><div class="seat occupied"></div> Occupied</div>
+  </div>
+
+  <!-- Checkout -->
+  <div class="checkout">
+    <p id="count">Seats Selected: 0</p>
+    <p id="seats">Selected Seats: None</p>
+    <p id="total">Total: ₹0</p> 
+  
+  </div>
+
+<!-- Proceed to Pay Button -->
+<button id="proceedBtn" class="btn">Proceed to Pay</button>
+ 
+<script>
+  document.getElementById("proceedBtn").addEventListener("click", function() {
+    // Example values
+    const totalAmount = 350;
+    const selectedSeats = "A1,A2,A3";
+
+    // Redirect to payment page with query params
+    window.location.href = `payment.html?amount=${totalAmount}&seats=${selectedSeats}`;
+  });
+</script>
+
+  <script src="Seat-Selection.js"></script>
+</body>
+</html>

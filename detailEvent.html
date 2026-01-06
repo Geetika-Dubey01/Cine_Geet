@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Details</title>
+  <link rel="stylesheet" href="Detail.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header"><h1 id="event-title"></h1></div>
+    <iframe id="event-trailer" allowfullscreen></iframe>
+    <div class="info">
+      <h2>Description</h2>
+      <p id="event-description"></p>
+      <div class="rating" id="event-rating"></div>
+    </div>
+    <a href="event.html" class="back-btn">⬅ Back to Events</a>
+       <a href="Seat-Selection.html
+    " class="book-btn">⬅ Book Now</a>
+  </div>
+
+  <script>
+    const events = {
+      1: { title: "Music Festival", trailer: "https://www.youtube.com/embed/ScMzIvxBSi4", description: "A grand music festival featuring top artists.", rating: "⭐ 4.5/5" },
+      2: { title: "Tech Expo", trailer: "https://www.youtube.com/embed/tgbNymZ7vqY", description: "Showcasing the latest in technology and innovation.", rating: "⭐ 4.6/5" },
+      3: { title: "Food Carnival", trailer: "https://www.youtube.com/embed/aqz-KE-bpKQ", description: "Taste delicious food from around the world.", rating: "⭐ 4.4/5" },
+      4: { title: "Book Fair", trailer: "https://www.youtube.com/embed/sNPnbI1arSE", description: "Discover new books and meet famous authors.", rating: "⭐ 4.3/5" },
+      5: { title: "Art Exhibition", trailer: "https://www.youtube.com/embed/oHg5SJYRHA0", description: "An exhibition of contemporary and modern art.", rating: "⭐ 4.7/5" },
+      6: { title: "Startup Meet", trailer: "https://www.youtube.com/embed/V-_O7nl0Ii0", description: "Networking event for entrepreneurs and investors.", rating: "⭐ 4.2/5" },
+      7: { title: "Dance Show", trailer: "https://www.youtube.com/embed/dQw4w9WgXcQ", description: "A showcase of traditional and modern dance styles.", rating: "⭐ 4.6/5" },
+      8: { title: "Film Festival", trailer: "https://www.youtube.com/embed/9bZkp7q19f0", description: "International film screenings and awards.", rating: "⭐ 4.8/5" },
+      9: { title: "Fashion Week", trailer: "https://www.youtube.com/embed/kXYiU_JCYtU", description: "Top designers showcase the latest trends.", rating: "⭐ 4.5/5" },
+      10:{ title: "Comedy Night", trailer: "https://www.youtube.com/embed/fJ9rUzIMcZQ", description: "A night of laughter with top comedians.", rating: "⭐ 4.4/5" },
+      11:{ title: "Science Fair", trailer: "https://www.youtube.com/embed/3JZ_D3ELwOQ", description: "Young innovators present their science projects.", rating: "⭐ 4.3/5" },
+      12:{ title: "Charity Gala", trailer: "https://www.youtube.com/embed/L_jWHffIx5E", description: "Fundraising event for a noble cause.", rating: "⭐ 4.6/5" },
+      13:{ title: "Cultural Fest", trailer: "https://www.youtube.com/embed/ktvTqknDobU", description: "Celebrate diversity with music, dance, and art.", rating: "⭐ 4.7/5" },
+      14:{ title: "Marathon", trailer: "https://www.youtube.com/embed/uelHwf8o7_U", description: "Annual city marathon for fitness enthusiasts.", rating: "⭐ 4.5/5" },
+      15:{ title: "Gaming Convention", trailer: "https://www.youtube.com/embed/JGwWNGJdvx8", description: "Gamers unite for tournaments and new releases.", rating: "⭐ 4.8/5" },
+      16:{ title: "Startup Pitch", trailer: "https://www.youtube.com/embed/rYEDA3JcQqw", description: "Innovators pitch ideas to investors.", rating: "⭐ 4.4/5" },
+      17:{ title: "Magic Show", trailer: "https://www.youtube.com/embed/eVTXPUF4Oz4", description: "Mind-blowing illusions and tricks.", rating: "⭐ 4.6/5" },
+      18:{ title: "Poetry Slam", trailer: "https://www.youtube.com/embed/tntOCGkgt98", description: "Poets perform their original works live.", rating: "⭐ 4.3/5" },
+      19:{ title: "Drama Festival", trailer: "https://www.youtube.com/embed/2Vv-BfVoq4g", description: "Plays performed by upcoming theatre groups.", rating: "⭐ 4.5/5" },
+      20:{ title: "Photography Contest", trailer: "https://www.youtube.com/embed/kJQP7kiw5Fk", description: "A contest for amateur and professional photographers.", rating: "⭐ 4.4/5" },
+      21:{ title: "Robotics Expo", trailer: "https://www.youtube.com/embed/09R8_2nJtjg", description: "Explore the future of robotics and AI.", rating: "⭐ 4.7/5" },
+      22:{ title: "Car Show", trailer: "https://www.youtube.com/embed/pRpeEdMmmQ0", description: "Showcase of luxury and sports cars.", rating: "⭐ 4.6/5" },
+      23:{ title: "Job Fair", trailer: "https://www.youtube.com/embed/60ItHLz5WEA", description: "Opportunities to connect with top companies.", rating: "⭐ 4.2/5" },
+      24:{ title: "Wedding Expo", trailer: "https://www.youtube.com/embed/OPf0YbXqDm0", description: "All wedding essentials under one roof.", rating: "⭐ 4.3/5" },
+      25:{ title: "Adventure Camp", trailer: "https://www.youtube.com/embed/lWA2pjMjpBs", description: "Outdoor adventure activities for youth.", rating: "⭐ 4.6/5" },
+      26:{ title: "Music Battle", trailer: "https://www.youtube.com/embed/QJO3ROT-A4E", description: "Bands compete for the ultimate title.", rating: "⭐ 4.5/5" },
+      27:{ title: "Stand-up Open Mic", trailer: "https://www.youtube.com/embed/6Ejga4kJUts", description: "Upcoming comedians test their jokes live.", rating: "⭐ 4.3/5" },
+      28:{ title: "Talent Show", trailer: "https://www.youtube.com/embed/Ntn1-SocNiY", description: "Showcase of hidden talents.", rating: "⭐ 4.4/5" },
+      29:{ title: "Startup Workshop", trailer: "https://www.youtube.com/embed/ktvTqknDobU", description: "Learn the basics of entrepreneurship.", rating: "⭐ 4.2/5" },
+      30:{ title: "Film Premiere", trailer: "https://www.youtube.com/embed/CevxZvSJLk8", description: "Exclusive screening of a blockbuster movie.", rating: "⭐ 4.9/5" }
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventId = urlParams.get("id");
+
+    if (events[eventId]) {
+      document.getElementById("event-title").textContent = events[eventId].title;
+      document.getElementById("event-trailer").src = events[eventId].trailer;
+      document.getElementById("event-description").textContent = events[eventId].description;
+      document.getElementById("event-rating").textContent = events[eventId].rating;
+    } else {
+      document.getElementById("event-title").textContent = "Event Not Found";
+      document.getElementById("event-description").textContent = "Sorry, no details available.";
+    }
+    
+  </script>
+</body>
+</html>
+

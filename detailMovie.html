@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie 1</title>
+  <link rel="stylesheet" href="Detail.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header"><h1>Movie 1</h1></div>
+
+    <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
+
+    <div class="info">
+      <h2>Description</h2>
+      <p>This is the description for Movie 1. Replace this text with the actual storyline.</p>
+      <div class="rating">⭐ Rating: 4.3/5</div>
+    </div>
+
+    <a href="movie.html
+    " class="back-btn">⬅ Back to Movies</a>
+    
+        <a href="Seat-Selection.html
+    " class="book-btn">⬅ Book Now</a>
+   
+   
+  </div>
+
+  <script>
+    // Step 1: Movie database (30 movies)
+    const movies = {
+      1: { title: "Movie 1", trailer: "https://www.youtube.com/embed/ScMzIvxBSi4", description: "Description for Movie 1.", rating: "⭐ 4.3/5" },
+      2: { title: "Movie 2", trailer: "https://www.youtube.com/embed/tgbNymZ7vqY", description: "Description for Movie 2.", rating: "⭐ 4.5/5" },
+      3: { title: "Movie 3", trailer: "https://www.youtube.com/embed/sNPnbI1arSE", description: "Description for Movie 3.", rating: "⭐ 4.1/5" },
+      4: { title: "Movie 4", trailer: "https://www.youtube.com/embed/e-ORhEE9VVg", description: "Description for Movie 4.", rating: "⭐ 3.9/5" },
+      5: { title: "Movie 5", trailer: "https://www.youtube.com/embed/aqz-KE-bpKQ", description: "Description for Movie 5.", rating: "⭐ 4.7/5" },
+      6: { title: "Movie 6", trailer: "https://www.youtube.com/embed/2Vv-BfVoq4g", description: "Description for Movie 6.", rating: "⭐ 4.0/5" },
+      7: { title: "Movie 7", trailer: "https://www.youtube.com/embed/3JZ_D3ELwOQ", description: "Description for Movie 7.", rating: "⭐ 3.8/5" },
+      8: { title: "Movie 8", trailer: "https://www.youtube.com/embed/60ItHLz5WEA", description: "Description for Movie 8.", rating: "⭐ 4.9/5" },
+      9: { title: "Movie 9", trailer: "https://www.youtube.com/embed/JGwWNGJdvx8", description: "Description for Movie 9.", rating: "⭐ 4.6/5" },
+      10: { title: "Movie 10", trailer: "https://www.youtube.com/embed/OPf0YbXqDm0", description: "Description for Movie 10.", rating: "⭐ 4.2/5" },
+      11: { title: "Movie 11", trailer: "https://www.youtube.com/embed/fRh_vgS2dFE", description: "Description for Movie 11.", rating: "⭐ 3.7/5" },
+      12: { title: "Movie 12", trailer: "https://www.youtube.com/embed/09R8_2nJtjg", description: "Description for Movie 12.", rating: "⭐ 4.4/5" },
+      13: { title: "Movie 13", trailer: "https://www.youtube.com/embed/ktvTqknDobU", description: "Description for Movie 13.", rating: "⭐ 4.1/5" },
+      14: { title: "Movie 14", trailer: "https://www.youtube.com/embed/kJQP7kiw5Fk", description: "Description for Movie 14.", rating: "⭐ 4.8/5" },
+      15: { title: "Movie 15", trailer: "https://www.youtube.com/embed/UceaB4D0jpo", description: "Description for Movie 15.", rating: "⭐ 3.6/5" },
+      16: { title: "Movie 16", trailer: "https://www.youtube.com/embed/6Dh-RL__uN4", description: "Description for Movie 16.", rating: "⭐ 4.0/5" },
+      17: { title: "Movie 17", trailer: "https://www.youtube.com/embed/RgKAFK5djSk", description: "Description for Movie 17.", rating: "⭐ 4.5/5" },
+      18: { title: "Movie 18", trailer: "https://www.youtube.com/embed/uelHwf8o7_U", description: "Description for Movie 18.", rating: "⭐ 3.9/5" },
+      19: { title: "Movie 19", trailer: "https://www.youtube.com/embed/hT_nvWreIhg", description: "Description for Movie 19.", rating: "⭐ 4.3/5" },
+      20: { title: "Movie 20", trailer: "https://www.youtube.com/embed/09mjR8_2nJtjg", description: "Description for Movie 20.", rating: "⭐ 4.6/5" },
+      21: { title: "Movie 21", trailer: "https://www.youtube.com/embed/fJ9rUzIMcZQ", description: "Description for Movie 21.", rating: "⭐ 4.9/5" },
+      22: { title: "Movie 22", trailer: "https://www.youtube.com/embed/Zi_XLOBDo_Y", description: "Description for Movie 22.", rating: "⭐ 4.4/5" },
+      23: { title: "Movie 23", trailer: "https://www.youtube.com/embed/3AtDnEC4zak", description: "Description for Movie 23.", rating: "⭐ 3.8/5" },
+      24: { title: "Movie 24", trailer: "https://www.youtube.com/embed/5NV6Rdv1a3I", description: "Description for Movie 24.", rating: "⭐ 4.2/5" },
+      25: { title: "Movie 25", trailer: "https://www.youtube.com/embed/SlPhMPnQ58k", description: "Description for Movie 25.", rating: "⭐ 4.5/5" },
+      26: { title: "Movie 26", trailer: "https://www.youtube.com/embed/9bZkp7q19f0", description: "Description for Movie 26.", rating: "⭐ 4.0/5" },
+      27: { title: "Movie 27", trailer: "https://www.youtube.com/embed/ktvTqknDobU", description: "Description for Movie 27.", rating: "⭐ 4.6/5" },
+      28: { title: "Movie 28", trailer: "https://www.youtube.com/embed/VYOjWnS4cMY", description: "Description for Movie 28.", rating: "⭐ 3.7/5" },
+      29: { title: "Movie 29", trailer: "https://www.youtube.com/embed/60ItHLz5WEA", description: "Description for Movie 29.", rating: "⭐ 4.8/5" },
+      30: { title: "Movie 30", trailer: "https://www.youtube.com/embed/2vjPBrBU-TM", description: "Description for Movie 30.", rating: "⭐ 4.1/5" }
+    };
+
+    // Step 2: Get movie id from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieId = urlParams.get("id");
+
+    // Step 3: Load movie data
+    if (movies[movieId]) {
+      document.getElementById("movie-title").textContent = movies[movieId].title;
+      document.getElementById("movie-trailer").src = movies[movieId].trailer;
+      document.getElementById("movie-description").textContent = movies[movieId].description;
+      document.getElementById("movie-rating").textContent = movies[movieId].rating;
+    } else {
+      document.getElementById("movie-title").textContent = "Movie Not Found";
+      document.getElementById("movie-description").textContent = "Sorry, no details available.";
+    }
+  </script>
+</body>
+</html>
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Tickets | MyShow</title>
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <h1>MyShow</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Movies</a>
+      <a href="#">Events</a>
+      <a href="#">Sports</a>
+    </nav>
+  </header>
+
+  <!-- Booking Form -->
+  <section class="booking-section">
+    <h2>🎟 Book Your Ticket</h2>
+
+    <form id="bookingForm">
+      <label for="movie">Select Movie:</label>
+      <select id="movie">
+        <option value="250">Vash Level 2 (₹250)</option>
+        <option value="300">The Conjuring (₹300)</option>
+        <option value="200">Demon Slayer (₹200)</option>
+        <option value="280">Animal (₹280)</option>
+      </select>
+
+      <label for="date">Select Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="time">Select Time:</label>
+      <select id="time">
+        <option>10:00 AM</option>
+        <option>1:00 PM</option>
+        <option>4:00 PM</option>
+        <option>7:00 PM</option>
+        <option>10:00 PM</option>
+      </select>
+    </form>
+  </section>
+
+  <!-- Seat Selection -->
+  <section class="seats-section">
+    <h2>🪑 Select Seats</h2>
+    <div class="screen">Screen This Way</div>
+    <div class="seats-grid" id="seats"></div>
+  </section>
+
+  <!-- Booking Summary -->
+  <section class="summary">
+    <h2>📋 Booking Summary</h2>
+    <p id="count">Seats Selected: 0</p>
+    <p id="total">Total Price: ₹0</p>
+    <button id="bookBtn">Book Now</button>
+  </section>
+
+  <footer>
+    <p>© 2025 MyShow - All Rights Reserved</p>
+  </footer>
+
+  <script src="booking.js"></script>
+</body>
+</html>

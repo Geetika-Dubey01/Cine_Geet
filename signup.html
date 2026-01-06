@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineGeet - Signup</title>
+<style>
+body {
+    font-family: 'Roboto', sans-serif;
+    background:#f4f4f4;
+    display:flex; justify-content:center; align-items:center;
+    height:100vh; margin:0;
+}
+.signup-container {
+    background:white; padding:40px; border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.15); width:100%; max-width:400px;
+}
+h2 { text-align:center; color:#e50914; margin-bottom:30px;}
+input { width:100%; padding:12px 15px; margin:10px 0; border:1px solid #ccc; border-radius:10px; font-size:16px; }
+button { border:none; cursor:pointer; font-weight:bold; }
+.signup-btn { width:100%; padding:12px; background:#e50914; color:white; border-radius:20px; margin-top:20px; transition:0.3s; }
+.signup-btn:hover { background:#b00710; }
+.otp-section { display:flex; gap:10px; margin-top:5px; }
+.otp-section button { flex:1; padding:10px; border-radius:10px; background:#e50914; color:white; transition:0.3s; }
+.otp-section button:hover { background:#b00710; }
+p.switch { text-align:center; margin-top:15px; }
+p.switch a { color:#e50914; text-decoration:none; font-weight:bold; }
+p.switch a:hover { text-decoration:underline; }
+.password-container { position:relative; }
+.toggle-pass { position:absolute; right:15px; top:12px; cursor:pointer; font-weight:bold; color:#e50914; }
+#strength { font-size:14px; margin-top:5px; }
+.countdown-otp { font-size:14px; color:#e50914; margin-top:5px; }
+.message { font-size:14px; color:#b00710; margin-top:5px; }
+</style>
+</head>
+<body>
+
+<div class="signup-container">
+    <h2>Signup to CineGeet</h2>
+    <form id="signupForm">
+        <input type="text" id="fullname" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        
+        <div id="strength"></div>
+        
+        <div class="password-container" style="margin-top:10px;">
+    <input type="password" id="password" placeholder="Password" style="width:100%; padding:12px; border-radius:10px; border:1px solid #ccc;">
+    
+    <label class="show-pass-label" style="display:flex; align-items:center; margin-top:5px; cursor:pointer; color:#e50914; font-weight:500;">
+        <input type="checkbox" id="togglePassword" style="margin-right:8px; width:18px; height:18px; accent-color:#e50914;">
+        Show Password
+    </label>
+</div>
+
+        <div class="message" id="pwdMessage"></div>
+        
+        <div class="otp-section">
+            <input type="text" id="otp" placeholder="Enter OTP">
+            <button type="button" id="sendOtpBtn" onclick="sendOtp()"> Send OTP </button>
+    <style>
+  /* existing CSS... */
+
+  #sendOtpBtn { padding: 8px 25px; }
+</style>
+
+
+        </div>
+        <div class="countdown-otp" id="otpCountdown"></div>
+        
+        <button type="submit" class="signup-btn">Signup</button>
+    </form>
+    <p class="switch">Already have an account? <a href="login.html">Login</a></p>
+</div>
+
+<script>
+// Toggle password visibility
+function togglePassword(id){
+    let field = document.getElementById(id);
+    field.type = field.type === "password" ? "text" : "password";
+}
+
+// Password strength
+document.getElementById('password').addEventListener('input', function(){
+    const val = this.value;
+    let strength = '';
+    if(val.length < 6) strength = 'Weak';
+    else if(val.match(/(?=.*[0-9])(?=.*[a-zA-Z])/)) strength = 'Medium';
+    else if(val.match(/(?=.*[!@#$%^&*])/)) strength = 'Strong';
+    document.getElementById('strength').innerText = 'Password Strength: ' + strength;
+});
+
+// OTP countdown
+let otpInterval;
+function sendOtp(){
+    let phone = document.getElementById('phone').value;
+    if(phone.length < 10){
+        alert('Enter valid phone number.');
+        return;
+    }
+    document.getElementById('otpCountdown').innerText = 'OTP sent! 60s remaining';
+    let time = 60;
+    clearInterval(otpInterval);
+    otpInterval = setInterval(() => {
+        time--;
+        if(time <= 0){
+            clearInterval(otpInterval);
+            document.getElementById('otpCountdown').innerText = '';
+        } else {
+            document.getElementById('otpCountdown').innerText = `OTP sent! ${time}s remaining`;
+        }
+    },1000);
+}
+
+// Form submit
+document.getElementById('signupForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    let pwd = document.getElementById('password').value;
+    let confirmPwd = document.getElementById('confirmPassword').value;
+    if(pwd !== confirmPwd){
+        document.getElementById('pwdMessage').innerText = 'Passwords do not match!';
+        return;
+    }
+    alert('Signup Successful! Redirecting to Login.');
+    window.location.href='login.html';
+});
+</script>
+<script src="auth.js"></script>
+</body>
+</html>
+

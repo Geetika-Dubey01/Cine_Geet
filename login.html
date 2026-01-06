@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineGeet - Login</title>
+<style>
+body { font-family: 'Roboto', sans-serif; background:#f4f4f4; display:flex; justify-content:center; align-items:center; height:100vh; margin:0;}
+.login-container { background:white; padding:40px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.15); width:100%; max-width:400px; }
+h2 { text-align:center; color:#e50914; margin-bottom:30px;}
+input { width:100%; padding:12px 15px; margin:10px 0; border:1px solid #ccc; border-radius:10px; font-size:16px; }
+button { border:none; cursor:pointer; font-weight:bold; }
+.login-btn { width:100%; padding:12px; background:#e50914; color:white; border-radius:20px; margin-top:20px; transition:0.3s; }
+.login-btn:hover { background:#b00710; }
+.otp-btn { width:100%; padding:12px; background:#1c8adb; color:white; border-radius:20px; margin-top:10px; transition:0.3s; }
+.otp-btn:hover { background:#156bb5; }
+p.switch { text-align:center; margin-top:15px; }
+p.switch a { color:#e50914; text-decoration:none; font-weight:bold; }
+p.switch a:hover { text-decoration:underline; }
+.password-container { position:relative; }
+.toggle-pass { position:absolute; right:15px; top:12px; cursor:pointer; font-weight:bold; color:#e50914; }
+.countdown-otp { font-size:14px; color:#e50914; margin-top:5px; }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+<h2>Login to CineGeet</h2>
+<form id="loginForm">
+    <input type="email" id="emailLogin" placeholder="Email or Phone" required>
+<div class="password-container" style="margin-top:10px;">
+    <input type="password" id="password" placeholder="Password" style="width:100%; padding:12px; border-radius:10px; border:1px solid #ccc;">
+    
+    <label class="show-pass-label" style="display:flex; align-items:center; margin-top:5px; cursor:pointer; color:#e50914; font-weight:500;">
+        <input type="checkbox" id="togglePassword" style="margin-right:8px; width:18px; height:18px; accent-color:#e50914;">
+        Show Password
+    </label>
+</div>
+
+
+    <button type="submit" class="login-btn">Login with Password</button>
+    <button type="button" class="otp-btn" id="otpLoginBtn" onclick="sendOtpLogin()">Login with OTP</button>
+    <div class="countdown-otp" id="otpCountdownLogin"></div>
+</form>
+<p class="switch">New user? <a href="signup.html">Signup</a></p>
+</div>
+
+<script>
+// Toggle password
+function togglePassword(id){
+    let field = document.getElementById(id);
+    field.type = field.type === 'password' ? 'text' : 'password';
+}
+
+// OTP countdown
+let otpIntervalLogin;
+function sendOtpLogin(){
+    let emailOrPhone = document.getElementById('emailLogin').value;
+    if(emailOrPhone===''){ alert('Enter Email or Phone'); return; }
+    document.getElementById('otpCountdownLogin').innerText='OTP sent! 60s remaining';
+    let time=60;
+    clearInterval(otpIntervalLogin);
+    otpIntervalLogin = setInterval(()=>{
+        time--;
+        if(time<=0){ clearInterval(otpIntervalLogin); document.getElementById('otpCountdownLogin').innerText=''; }
+        else{ document.getElementById('otpCountdownLogin').innerText=`OTP sent! ${time}s remaining`; }
+    },1000);
+}
+
+// Form submit
+document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Login Successful! Redirecting to Home.');
+    window.location.href='index.html';
+});
+</script>
+<script src="auth.js"></script>
+</body>
+</html>
+
