@@ -123,3 +123,97 @@ footer {
   padding: 15px;
   margin-top: 40px;
 }
+
+/* ============================= */
+/* 📱 Mobile Devices (max 480px) */
+/* ============================= */
+@media (max-width: 480px) {
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .booking-section {
+    padding: 20px;
+    margin: 15px;
+  }
+
+  .screen {
+    width: 90%;
+  }
+
+  .seats-grid {
+    grid-template-columns: repeat(5, 35px);
+    gap: 8px;
+  }
+
+  .seat {
+    width: 35px;
+    height: 35px;
+  }
+
+  .summary {
+    margin: 15px;
+    padding: 15px;
+  }
+}
+
+
+/* ============================= */
+/* 📲 Tablet Devices (max 768px) */
+/* ============================= */
+@media (max-width: 768px) {
+
+  header {
+    padding: 15px 20px;
+  }
+
+  .booking-section {
+    max-width: 90%;
+  }
+
+  .screen {
+    width: 70%;
+  }
+
+  .seats-grid {
+    grid-template-columns: repeat(8, 38px);
+    gap: 8px;
+  }
+
+  .seat {
+    width: 38px;
+    height: 38px;
+  }
+
+  .summary {
+    max-width: 90%;
+  }
+}
+
+
+/* ================================= */
+/* 💻 Small Laptops (max 1024px) */
+/* ================================= */
+@media (max-width: 1024px) {
+
+  .booking-section {
+    max-width: 80%;
+  }
+
+  .summary {
+    max-width: 80%;
+  }
+
+  .screen {
+    width: 60%;
+  }
+
+}

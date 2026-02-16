@@ -91,3 +91,81 @@ button {
   cursor: pointer;
   font-weight: bold;
 }
+
+/* ================================= */
+/* 📱 Mobile Devices (max 480px) */
+/* ================================= */
+@media (max-width: 480px) {
+
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .screen {
+    width: 95%;
+    height: 60px;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .seat {
+    width: 24px;
+    height: 24px;
+    margin: 4px;
+  }
+
+  .seat::after {
+    font-size: 8px;
+    top: -12px;
+  }
+
+  .legend {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+}
+
+
+/* ================================= */
+/* 📲 Tablet Devices (max 768px) */
+/* ================================= */
+@media (max-width: 768px) {
+
+  .screen {
+    width: 90%;
+    height: 70px;
+  }
+
+  .seat {
+    width: 28px;
+    height: 28px;
+  }
+
+  .legend {
+    gap: 15px;
+  }
+
+}
+
+
+/* ================================= */
+/* 💻 Small Laptops (max 1024px) */
+/* ================================= */
+@media (max-width: 1024px) {
+
+  .screen {
+    width: 85%;
+  }
+
+}
