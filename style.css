@@ -22,19 +22,18 @@ h2 {
    NAVBAR
 ========================= */
 
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .navbar {
   background-color: #2c2c2c;
   padding: 20px 60px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.logo {
-  font-size: 26px;
-  font-weight: bold;
-  color: white;
+  gap: 20px;
 }
 
 .navbar ul {
@@ -43,6 +42,22 @@ h2 {
   gap: 25px;
   margin: 0;
   padding: 0;
+  justify-content: center;
+}
+
+.search-wrapper input {
+  width: 100%;
+  max-width: 350px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
 }
 
 .navbar ul li a {
@@ -54,14 +69,6 @@ h2 {
 
 .navbar ul li a:hover {
   color: gold;
-}
-
-.navbar input {
-  width: 280px;
-  padding: 8px 12px;
-  border-radius: 20px;
-  border: none;
-  outline: none;
 }
 
 .nav-buttons {
@@ -84,19 +91,26 @@ h2 {
   color: black;
 }
 
+
 /* =========================
    HERO SECTION
 ========================= */
-
 .hero {
   height: 350px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center;      /* vertically center */
+  justify-content: center;  /* horizontally center */
   text-align: center;
-  font-size: 32px;
-  font-weight: bold;
+  padding: 0 20px;
+  background-color: black;
+}
+
+.hero h1 {
+  font-size: 36px;
   color: gold;
+  margin: 0;
+  max-width: 900px;
+  line-height: 1.3;
 }
 
 /* =========================
