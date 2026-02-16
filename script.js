@@ -38,3 +38,8 @@ function renderCards(data, containerId) {
 renderCards(recommendedMovies, "recommended-movies");
 renderCards(liveEvents, "live-events");
 renderCards(premieres, "premieres");
+
+
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("active");
+}
