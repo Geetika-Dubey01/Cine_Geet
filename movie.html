@@ -7,16 +7,37 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>MyShow</h1>
-    <!-- <nav> -->
-      <!-- <a href="index.html">Home</a> -->
-      <!-- <a href="movies.html">Movies</a> -->
-      <!-- <a href="events.html">Events</a> -->
-      <!-- <a href="plays.html">Plays</a> -->
-      <!-- <a href="sports.html">Sports</a> -->
-    </nav>
-  </header>
+  <video autoplay muted loop playsinline class="bg-video">
+  <source src="Images_Cine_Geet/vedios/movie.mp4" type="video/mp4">
+</video>
+
+<div class="video-overlay"></div>
+  <header class="navbar">
+
+  <div class="logo">CineGeet</div>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="movie.html">Movies</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="plays.html">Plays</a></li>
+    <li><a href="sports.html">Sports</a></li>
+  </ul>
+
+  <div class="search-wrapper">
+    <input type="text" id="searchInput" placeholder="Search for Movies, Events..." />
+  </div>
+
+  <div class="nav-buttons">
+    <a href="signup.html">Sign Up</a>
+    <a href="login.html">Login</a>
+  </div>
+
+</header>
+
+
 
   <section class="content">
     <h2>🎬 Now Showing Movies</h2>
@@ -370,5 +391,6 @@
   <footer>
     <p>© 2025 MyShow - All Rights Reserved</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

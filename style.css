@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  /* background-color: black; */
   color: white;
   font-family: Arial, sans-serif;
 }
@@ -26,7 +26,9 @@ h2 {
   display: flex;
   justify-content: center;
 }
-
+.navbar {
+  margin-bottom: 40px;
+}
 .navbar {
   background-color: #2c2c2c;
   padding: 20px 60px;
@@ -44,6 +46,12 @@ h2 {
   padding: 0;
   justify-content: center;
 }
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
 
 .search-wrapper input {
   width: 100%;
@@ -102,6 +110,32 @@ h2 {
 .hero h1 {
   margin: 0 auto;
   text-align: center;
+}
+@media (max-width: 768px) {
+
+  .navbar {
+    margin-bottom: 0;
+  }
+
+  .hero {
+    padding-top: 20px;   /* Agar zyada ho to 0 bhi kar sakte ho */
+    margin-top: 0;
+  }
+
+  .nav-buttons {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-buttons.active {
+    display: flex !important;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -233,135 +267,238 @@ footer {
   margin-top: 40px;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
+/* =====================================
+   MOBILE RESPONSIVE (768px)
+===================================== */
 
-/* 📱 Mobile */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
-  section {
-    padding: 20px;
-  }
-
+  /* Navbar */
   .navbar {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px;
+    flex-wrap: wrap;
+    padding: 15px;
   }
 
   .navbar ul {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar input {
     width: 100%;
+    display: none;
+    margin-top: 10px;
   }
 
-  .nav-buttons {
-    justify-content: center;
-  }
-
-  .hero {
-    height: 220px;
-    font-size: 20px;
-    padding: 0 10px;
-  }
-
-  .card-container,
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* 📲 Tablet */
-@media (max-width: 768px) {
-
-  .navbar {
-    padding: 20px;
-  }
-
-  .hero {
-    height: 260px;
-    font-size: 24px;
-  }
-
-  .card-container,
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* 💻 Small Laptop */
-@media (max-width: 1024px) {
-
-  .card-container,
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-/* ===== MOBILE NAVBAR FIX ===== */
-@media (max-width: 768px) {
-
-  .navbar {
-    grid-template-columns: 1fr;   /* single column */
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .logo {
-    margin-bottom: 10px;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    gap: 10px;
-    margin: 10px 0;
+  .navbar ul li {
+    padding: 10px 0;
   }
 
   .search-wrapper {
+    width: 100%;
     margin: 10px 0;
   }
 
   .search-wrapper input {
     width: 100%;
-    max-width: 100%;
   }
 
   .nav-buttons {
-    justify-content: center;
-    margin-top: 10px;
-  }
-}
-
-/* Hamburger hidden on desktop */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: white;
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
-
-  .hamburger {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
-
-  .nav-buttons {
+    width: 100%;
     display: none;
     flex-direction: column;
     gap: 10px;
-    margin-top: 10px;
   }
 
-  .nav-buttons.active {
+  .nav-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  section {
+  padding: 40px 10%;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 20px 5%;
+  }
+}
+  .hero + section {
+    padding-top: 10px;
+  }
+
+
+  /* Hamburger visible */
+  .hamburger {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  /* When active */
+  .navbar.active ul,
+  .navbar.active .nav-buttons {
     display: flex;
   }
+
+  /* Hero */
+  .hero h1 {
+    font-size: 22px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Cards */
+  .card-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+  }
+
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .card img {
+    height: 180px !important;
+  }
+
+  h1 {
+    font-size: 20px !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+  }
+
+}
+/* ==========================
+   PLAYS PAGE RESPONSIVE
+========================== */
+
+/* Tablet View */
+@media (max-width: 992px) {
+
+  header {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  .content {
+    padding: 20px !important;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 20px !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+  }
+
+  .card img {
+    height: 160px !important;
+  }
+
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar ul,
+  .nav-buttons {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar.active ul,
+  .navbar.active .nav-buttons {
+    display: flex;
+  }
+}
+/* Background Video */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: -1;
+}
+.navbar,
+.hero,
+section,
+footer {
+  position: relative;
+  z-index: 1;
+}
+   @media (max-width: 768px) {
+
+  /* Option 1 (Recommended) — Hide video for performance */
+  .bg-video {
+    display: none;
+  }
+
+  body {
+    background: black;
+  }
+
+  .video-overlay {
+    display: none;
+  }
+
 }

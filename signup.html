@@ -46,6 +46,11 @@ p.switch a:hover { text-decoration:underline; }
         
         <div class="password-container" style="margin-top:10px;">
     <input type="password" id="password" placeholder="Password" style="width:100%; padding:12px; border-radius:10px; border:1px solid #ccc;">
+    <div class="password-container" style="margin-top:10px;">
+    <input type="password" id="confirmPassword" placeholder="Confirm Password"
+           style="width:100%; padding:12px; border-radius:10px; border:1px solid #ccc;">
+</div>
+
     
     <label class="show-pass-label" style="display:flex; align-items:center; margin-top:5px; cursor:pointer; color:#e50914; font-weight:500;">
         <input type="checkbox" id="togglePassword" style="margin-right:8px; width:18px; height:18px; accent-color:#e50914;">
@@ -62,6 +67,77 @@ p.switch a:hover { text-decoration:underline; }
   /* existing CSS... */
 
   #sendOtpBtn { padding: 8px 25px; }
+
+  /* =================================
+   SIGNUP PAGE RESPONSIVE
+================================= */
+
+/* Tablet View */
+@media (max-width: 992px) {
+
+  .signup-container {
+    max-width: 90% !important;
+    padding: 30px !important;
+  }
+
+  h2 {
+    font-size: 24px !important;
+  }
+
+}
+
+
+/* Mobile View */
+@media (max-width: 768px) {
+
+  body {
+    padding: 20px !important;
+    align-items: flex-start !important;
+  }
+
+  .signup-container {
+    padding: 25px !important;
+    border-radius: 12px !important;
+  }
+
+  input {
+    padding: 10px !important;
+    font-size: 14px !important;
+  }
+
+  .signup-btn {
+    padding: 10px !important;
+  }
+
+  .otp-section {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .otp-section input {
+    width: 100% !important;
+  }
+
+  .otp-section button {
+    width: 100% !important;
+  }
+
+}
+
+
+/* Small Phones */
+@media (max-width: 480px) {
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  .signup-container {
+    padding: 20px !important;
+  }
+
+}
+
 </style>
 
 
@@ -79,6 +155,22 @@ function togglePassword(id){
     let field = document.getElementById(id);
     field.type = field.type === "password" ? "text" : "password";
 }
+// Confirm password match check
+document.getElementById('signupForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    let pwd = document.getElementById('password').value;
+    let confirmPwd = document.getElementById('confirmPassword').value;
+
+    if(pwd !== confirmPwd){
+        document.getElementById('pwdMessage').innerText = 'Passwords do not match!';
+        return;
+    }
+
+    alert('Signup Successful!');
+    window.location.href = 'login.html';
+});
+
 
 // Password strength
 document.getElementById('password').addEventListener('input', function(){

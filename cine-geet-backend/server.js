@@ -34,9 +34,6 @@ app.get("/", (req, res) => {
 });
 console.log("Your Mongo URI is:", process.env.MONGO_URI);
 
-
-import movieRoutes from "./routes/movieRoutes.js";
-
 app.use("/api/movies", movieRoutes);
   const movies = await res.json();
   displayMovies(movies);

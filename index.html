@@ -5,29 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movie Ticket Booking | CineGeet</title>
   <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
+  <video autoplay muted loop playsinline class="bg-video">
+  <source src="Images_Cine_Geet/vedios/home.mp4" type="video/mp4">
+</video>
+
+<div class="video-overlay"></div>
 
   <!-- Navbar -->
   <header class="navbar">
     <div class="logo">CineGeet</div>
     <ul>
+    <li><a href="index.html">Home</a></li>
     <li><a href="movie.html">Movies</a></li>
     <li><a href="events.html">Events</a></li>
     <li><a href="plays.html">Plays</a></li>
     <li><a href="sports.html">Sports</a></li>
     </ul>
     <div class="search-wrapper">
-    <input type="text" placeholder="Search for Movies, Events, Plays, Sports">
+    <input type="text" id="searchInput" placeholder="Search for Movies, Events, Plays, Sports">
   </div>
-   <div class="hamburger" onclick="toggleMenu()">
-                 ☰
-        </div>
 
     <div class="nav-buttons" id="mobileMenu">
       <a href="signup.html" class="signup-btn">Sign Up</a>
       <a href="login.html" class="login-btn">Login</a>
     </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </header>
 
   <!-- Hero Banner -->

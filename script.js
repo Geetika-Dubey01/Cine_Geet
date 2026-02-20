@@ -34,12 +34,33 @@ function renderCards(data, containerId) {
   `).join("");
 }
 
-// Render sections
-renderCards(recommendedMovies, "recommended-movies");
-renderCards(liveEvents, "live-events");
-renderCards(premieres, "premieres");
-
-
 function toggleMenu() {
   document.getElementById("mobileMenu").classList.toggle("active");
 }
+
+function toggleMenu() {
+  document.querySelector(".navbar").classList.toggle("active");
+}
+
+// Search Function
+document.getElementById("searchInput").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    let query = this.value.toLowerCase().trim();
+
+    if (query.includes("movie")) {
+      window.location.href = "movie.html";
+    } 
+    else if (query.includes("event")) {
+      window.location.href = "events.html";
+    } 
+    else if (query.includes("play")) {
+      window.location.href = "plays.html";
+    } 
+    else if (query.includes("sport")) {
+      window.location.href = "sports.html";
+    } 
+    else {
+      alert("No results found!");
+    }
+  }
+});

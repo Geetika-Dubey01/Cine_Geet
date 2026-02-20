@@ -94,75 +94,84 @@ footer {
   margin-top: 40px;
 }
 
-/* ================================= */
-/* 📱 Mobile Devices (max 480px) */
-/* ================================= */
-@media (max-width: 480px) {
+/* ==========================
+   PAYMENT PAGE RESPONSIVE
+========================== */
+
+/* Tablet */
+@media (max-width: 992px) {
 
   header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    flex-direction: column !important;
+    text-align: center !important;
   }
 
   nav {
-    flex-direction: column;
-    gap: 10px;
+    margin-top: 10px !important;
   }
 
   .payment-section {
-    margin: 15px;
-    padding: 20px;
-  }
-
-  .payment-section h2 {
-    font-size: 20px;
-  }
-
-  .payment-methods {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .pay-btn {
-    font-size: 16px;
-    padding: 10px;
+    padding: 20px !important;
   }
 
 }
 
 
-/* ================================= */
-/* 📲 Tablet Devices (max 768px) */
-/* ================================= */
+/* Mobile */
 @media (max-width: 768px) {
 
   header {
-    padding: 15px 20px;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  nav {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
   }
 
   .payment-section {
-    max-width: 90%;
+    padding: 15px !important;
+  }
+
+  form {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  input,
+  select {
+    width: 100% !important;
   }
 
   .payment-methods {
-    gap: 15px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
   }
 
   .pay-btn {
-    font-size: 17px;
+    width: 100% !important;
   }
 
 }
 
 
-/* ================================= */
-/* 💻 Small Laptops (max 1024px) */
-/* ================================= */
-@media (max-width: 1024px) {
+/* Extra Small Devices */
+@media (max-width: 480px) {
 
-  .payment-section {
-    max-width: 80%;
+  h1 {
+    font-size: 20px !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+  }
+
+  input {
+    font-size: 14px !important;
   }
 
 }
+
