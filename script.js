@@ -23,6 +23,7 @@ const premieres = [
 // Function to render cards
 function renderCards(data, containerId) {
   const container = document.getElementById(containerId);
+  if (!container) return;
   container.innerHTML = data.map(item => `
     <div class="card">
       <img src="${item.img}" alt="${item.title}">
@@ -30,37 +31,41 @@ function renderCards(data, containerId) {
         <h3>${item.title}</h3>
         <p>${item.lang || item.info}</p>
       </div>
-    </div>
+    </div>check the code
+
   `).join("");
 }
 
 function toggleMenu() {
-  document.getElementById("mobileMenu").classList.toggle("active");
-}
-
-function toggleMenu() {
-  document.querySelector(".navbar").classList.toggle("active");
+  const navbar = document.querySelector(".navbar");
+  if (navbar) {
+    navbar.classList.toggle("active");
+  }
 }
 
 // Search Function
-document.getElementById("searchInput").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    let query = this.value.toLowerCase().trim();
+const searchInput = document.getElementById("searchInput");
 
-    if (query.includes("movie")) {
-      window.location.href = "movie.html";
-    } 
-    else if (query.includes("event")) {
-      window.location.href = "events.html";
-    } 
-    else if (query.includes("play")) {
-      window.location.href = "plays.html";
-    } 
-    else if (query.includes("sport")) {
-      window.location.href = "sports.html";
-    } 
-    else {
-      alert("No results found!");
+if (searchInput) {
+  searchInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      let query = this.value.toLowerCase().trim();
+
+      if (query.includes("movie")) {
+        window.location.href = "movie.html";
+      } 
+      else if (query.includes("event")) {
+        window.location.href = "events.html";
+      } 
+      else if (query.includes("play")) {
+        window.location.href = "plays.html";
+      } 
+      else if (query.includes("sport")) {
+        window.location.href = "sports.html";
+      } 
+      else {
+        alert("No results found!");
+      }
     }
-  }
-});
+  });
+}
